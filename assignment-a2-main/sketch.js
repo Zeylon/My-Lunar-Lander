@@ -177,7 +177,7 @@ stars(0, 0);
   // Landing platform
   let landingLeft = 550;
   let landingRight = 750;
-  let landingY = 680;
+  let landingY = 640;
 
 
   // Check if rocket touches landing platform
@@ -214,7 +214,7 @@ stars(0, 0);
 
 function setup() {
 
-createCanvas(1400, 1000);
+createCanvas(1350, 990);
   for (let i = 0; i < 100; i++) {
 
     starX.push(Math.floor(Math.random() * 1400));
@@ -235,7 +235,7 @@ function stars(x, y) {
 }
 
 function rocketship(x, y) {
-
+stroke(0);
   // Body
   fill(255);
   ellipse(x + 120, y + 120, 120, 240);
