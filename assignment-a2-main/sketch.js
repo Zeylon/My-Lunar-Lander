@@ -149,7 +149,35 @@ function draw() {
   let landingY = 680;
 
 
+  //check if rocket touches landing platform
+  if (
+    rocketBottom >= landingY &&
+    rocketBottom <= landingY + 25 &&
+    rocketRight > landingLeft &&
+    rocketLeft < landingRight
+  ) {
 
+    // Slow landing = success
+    if (abs(speedY) < 2) {
+
+      landed = true;
+
+    }
+
+    // Too fast = crash
+    else {
+
+      gameOver = true;
+
+    }
+  }
+
+
+  // Crash if rocket hits the planet
+  if (rocketBottom > 700) {
+
+    gameOver = true;
+  }
 
 }
 
