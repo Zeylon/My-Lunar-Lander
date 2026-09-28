@@ -147,7 +147,16 @@ function draw() {
   }
 
 
+  // Display information
+  fill(255);
+  textAlign(LEFT);
 
+  textSize(20);
+  text("Fuel: " + floor(fuel), 30, 40);
+
+  text("Vertical speed: " + nf(abs(speedY), 1, 2), 30, 70);
+
+  text("SPACE = Thrust | A = Left | D = Right", 30, 100);
 
 
   // Landing hitbox
