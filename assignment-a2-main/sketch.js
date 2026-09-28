@@ -10,6 +10,8 @@ let gameStarted = false;
 let gameOver = false;
 let landed = false;
 
+let starX = [];
+let starY = [];
 
 function draw() {
 
@@ -82,6 +84,7 @@ function draw() {
   // Background
   background(0);
 
+stars(0, 0);
 
   // Draw planet
   planet(0, 0);
@@ -209,7 +212,27 @@ function draw() {
 
 }
 
+function setup() {
 
+createCanvas(1400, 1000);
+  for (let i = 0; i < 100; i++) {
+
+    starX.push(Math.floor(Math.random() * 1400));
+    starY.push(Math.floor(Math.random() * 800));
+
+  }
+}
+
+function stars(x, y) {
+
+  fill(255);
+
+  for (let i = 0; i < starX.length; i++) {
+
+    circle(x + starX[i], y + starY[i], 4);
+
+  }
+}
 
 function rocketship(x, y) {
 
@@ -337,6 +360,7 @@ function planet(x, y) {
   circle(x + 560, y + 690, 10);
   circle(x + 740, y + 690, 10);
 }
+
 
 
 //keyboard
