@@ -6,14 +6,41 @@ let speedY = 0;
 
 let fuel = 100;
 
+let gameStarted = false;
+let gameOver = false;
+let landed = false;
+
+function draw() {
+if (gameStarted == false) {
+
+    background(0);
+
+    fill(255);
+    textAlign(CENTER);
+
+    textSize(50);
+    text("LUNAR LANDER", 700, 200);
+
+    textSize(25);
+    text("Land your rocket safely!", 700, 260);
+
+    textSize(20);
+    text("W = Thrust", 700, 350);
+    text("A = Left", 700, 380);
+    text("D = Right", 700, 410);
+
+    textSize(25);
+    text("Press ENTER to start", 700, 500);
+
+    return;
+  }
 
 
 
 
 
 
-
-
+}
   function rocketship(x, y) {
 
     background(0);
@@ -88,21 +115,31 @@ let fuel = 100;
 function planet(x, y) {
 
   // Planet
-  fill(80, 80, 90);
-  ellipse(x + 550, y + 780, 1000, 300);
+  fill(70, 70, 80);
+  ellipse(x + 650, y + 1000, 1600, 650);
 
-  // Craters
+  // Darker craters
   fill(50, 50, 60);
-  ellipse(x + 250, y + 830, 100, 35);
-  ellipse(x + 600, y + 740, 140, 40);
-  ellipse(x + 850, y + 820, 90, 30);
+
+  ellipse(x + 250, y + 850, 140, 50);
+  ellipse(x + 400, y + 950, 200, 60);
+  ellipse(x + 700, y + 820, 120, 40);
+  ellipse(x + 900, y + 970, 180, 55);
+  ellipse(x + 1100, y + 850, 130, 45);
+
+  // Smaller craters
+  fill(90, 90, 100);
+
+  ellipse(x + 320, y + 1050, 80, 30);
+  ellipse(x + 600, y + 1000, 100, 35);
+  ellipse(x + 1000, y + 1050, 90, 30);
 
   // Landing area
   fill(0, 255, 100);
-  rect(x + 450, y + 640, 200, 20);
+  rect(x + 550, y + 680, 200, 20);
 
   // Landing lights
   fill(255, 255, 0);
-  circle(x + 470, y + 650, 10);
-  circle(x + 630, y + 650, 10);
+  circle(x + 560, y + 690, 10);
+  circle(x + 740, y + 690, 10);
 }
