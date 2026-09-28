@@ -11,6 +11,8 @@ let gameOver = false;
 let landed = false;
 
 function draw() {
+
+  //staup screen
 if (gameStarted == false) {
 
     background(0);
@@ -34,8 +36,23 @@ if (gameStarted == false) {
 
     return;
   }
+// game over screen
+if (gameOver == true) {
 
+    background(0);
 
+    fill(255, 0, 0);
+    textAlign(CENTER);
+
+    textSize(60);
+    text("YOU CRASHED!", 700, 300);
+
+    fill(255);
+    textSize(25);
+    text("Press R to restart", 700, 380);
+
+    return;
+  }
 
 
 
