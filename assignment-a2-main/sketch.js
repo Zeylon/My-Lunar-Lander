@@ -91,7 +91,7 @@ function draw() {
   speedY = speedY + 0.05;
 
 
-  // A = Left
+  // a left
   if (keyIsDown(65) && fuel > 0) {
 
     speedX = speedX - 0.05;
@@ -100,7 +100,7 @@ function draw() {
   }
 
 
-  // D = Right
+  // d right
   if (keyIsDown(68) && fuel > 0) {
 
     speedX = speedX + 0.05;
@@ -109,7 +109,7 @@ function draw() {
   }
 
 
-  // SPACE
+  // SPACE thrust
   if (keyIsDown(32) && fuel > 0) {
 
     speedY = speedY - 0.1;
@@ -127,6 +127,18 @@ function draw() {
 
   // Draw rocket
   rocketship(x, y);
+
+
+  // Keep rocket from going off the sides
+  if (x < -50) {
+    x = -50;
+    speedX = 0;
+  }
+
+  if (x > 1280) {
+    x = 1280;
+    speedX = 0;
+  }
 
 
 
@@ -149,7 +161,7 @@ function draw() {
   let landingY = 680;
 
 
-  //check if rocket touches landing platform
+  // Check if rocket touches landing platform
   if (
     rocketBottom >= landingY &&
     rocketBottom <= landingY + 25 &&
