@@ -141,6 +141,13 @@ function draw() {
   }
 
 
+  // Fuel can't go below 0
+  if (fuel < 0) {
+    fuel = 0;
+  }
+
+
+
 
 
   // Landing hitbox
