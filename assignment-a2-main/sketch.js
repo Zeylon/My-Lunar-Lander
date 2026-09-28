@@ -289,7 +289,6 @@ function amogus(x, y) {
 }
 
 
-
 function Fire(x, y) {
 
   noStroke();
@@ -348,17 +347,18 @@ function planet(x, y) {
   ellipse(x + 1000, y + 1050, 90, 30);
 
 
-  // Landing area
+  // Landing zone
+  fill(40, 40, 50);
+  ellipse(x + 650, y + 690, 220, 60);
+
+  // Green landing circle
   fill(0, 255, 100);
+  ellipse(x + 650, y + 680, 160, 35);
 
-  rect(x + 550,y + 680,200,20);
-
-
-  // Landing lights
-  fill(255, 255, 0);
-
-  circle(x + 560, y + 690, 10);
-  circle(x + 740, y + 690, 10);
+  // Small center marker
+  fill(255);
+  ellipse(x + 650, y + 675, 30, 8);
+  strokeWeight(1);
 }
 
 
