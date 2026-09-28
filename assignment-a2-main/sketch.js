@@ -1,3 +1,10 @@
+let x = 200;
+let y = 200;
+
+let speedX = 0;
+let speedY = 0;
+
+
 function draw() {
 function rocketship(x, y) {
     background(0);
@@ -67,18 +74,38 @@ function Fire (x, y) {
 rocketship(x, y);
 Fire (x, y);
 
+speedY = speedY + 0.05;
 
 
+if (keyIsDown(65)) {
+    speedX = speedX - 0.05;
+    fuel = fuel - 0.1;
+}
 
+if (keyIsDown(68)) {
+    speedX = speedX + 0.05;
+    fuel = fuel - 0.1;
+}
 
-
-
-
-
-
-
-
-
-
+if (keyIsDown(87)) {
+    speedY = speedY - 0.1;
+    fuel = fuel - 0.2;
+}
+//x = x + speedX;
+//y = y + speedY;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
